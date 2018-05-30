@@ -1,0 +1,19 @@
+.daohang span,div{
+	vertical-align: middle;
+}
+.row>span{
+	text-align: right;
+	margin-top:10px;
+}
+.row{
+	margin-left:-35px;
+}
+#table{
+    border: 1px solid #ccc;
+}
+.firstTr{
+	  border: 1px solid #d6dfe6;
+}
+.firstTr td{
+	 border-right: 2px solid rgba(209, 218, 223, 0.4);
+}

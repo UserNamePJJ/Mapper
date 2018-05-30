@@ -1,0 +1,115 @@
+body,html{
+				font-size: 10px;
+			}
+				ul li{
+				
+				display: inline-block;
+			}
+			.za{
+				width: 100%;
+				margin-left: 0em;
+				border-bottom: 2px solid #e8e8e8;
+				border-bottom-color:#e8e8e8 ;
+			}
+			.daohang{
+				font-family: Microsoft YaHei;
+				  font-size: 1.3em; 
+			     height: 25px;
+				display: inline-block;
+				bottom: -2px;
+			}
+			.daohang span{
+				cursor: pointer;
+			}
+			.sty{
+				color: #ff6000;
+				 border-bottom: 2px solid #e8e8e8;
+				border-bottom-color:#ff6000 ;
+			}
+			.da{
+				color: #e8e8e8;
+				position: absolute;
+				left: 98%;
+			}
+			.sea{
+				width: 100%;
+				font-size: 1em;
+				margin-left: 0em;
+				margin-top: 2em;
+				background-color:#e8e8e8 ;
+				height: 4em;
+			}
+			.sea ul{
+				margin-top: 2%;
+			}
+			.sea button{
+			background-color:#e8e8e8 ;
+				border: none;
+			}
+			#ut li:hover {
+			cursor: pointer;
+				background-color: #337AB7;
+				color: white;
+			}
+			#ut li{
+				color: grey;
+				width: 98px;
+				margin-left: -9px;
+			}
+			#dw{
+				z-index: 10;
+				position: absolute;
+				background-color: white;
+				text-align: center;
+				box-shadow: 1px 1px 3px #333333;
+				display: none;
+				
+				
+			}
+			
+			#content{
+				width: 65%;
+				margin-left: 20%;
+				
+			}
+			
+			table{
+				 font-size:10px;
+				width: 100%;
+			}
+		
+           table tr:nth-child(odd){
+           	height: 20px;
+           	background-color:#e8e8e8 ;
+           }
+           table tr:nth-child(even){
+           	height: 120px;
+           
+           }
+     .tab{
+     	
+    border:1px solid #e8e8e8;
+     	margin-top: 20px;
+     }
+ .del{
+ z-index:9;
+ position:absolute;
+ border:1px sold red;
+ background-color:red;
+ height: 10px;
+ width: 10px;
+ margin-left: 1px;
+ opacity:0;
+ }
+ #load{
+ position:fixed;
+ left:50%;
+ top:48%;
+ height:50px;
+ width:50px;
+ display:none;
+ background-image: url("../img/login.gif") ;
+ }
+ .tdd{
+ border-right: 1px solid #e8e8e8; 
+ }

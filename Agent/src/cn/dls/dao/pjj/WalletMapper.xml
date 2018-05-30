@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.dls.dao.pjj.WalletMapper">
+	<select id="findEvery" resultType="Wallet">
+		SELECT w.*,u.`username`,b.`transactiontimeend`,t.`typename`,u.`money`
+		FROM wallet w,`user` u,`transactiontype` t,bill b
+		WHERE w.`billid`=b.`billid` AND w.`userid`=u.`userid` AND
+		w.`transactionid`=t.`id` and w.userid=#{userid}
+		<if test="typeid!=0">
+			and t.`id`=#{typeid}
+		</if>
+	</select>
+
+<select id="findEvery1" resultType="Wallet">
+		SELECT w.*,u.`username`,b.`transactiontimeend`,t.`typename`,u.`money`,s.seatname
+		FROM wallet w,`user` u,`transactiontype` t,bill b,seat s
+		WHERE w.`billid`=b.`billid` AND w.`userid`=u.`userid` AND
+		 w.`transactionid`=t.`id` and w.seatid=s.seatid and w.userid=#{userid}
+		<if test="typ!=null and typ!=''" >
+			and s.seatname=#{typ}
+		</if>
+		<if test="ope!=null and ope!='' and clo!=null and clo!=''" >
+			and b.`transactiontimeend` BETWEEN #{ope} AND  #{clo}
+		</if>
+		<if test="ope!=null and ope!='' and clo==null and clo==''" >
+			and b.`transactiontimeend`>#{ope}
+		</if>
+		<if test="ope==null and ope=='' and clo!=null and clo!=''" >
+			and b.`transactiontimeend`>#{clo}
+		</if>
+		<if test="name>0" >
+			AND b.`billid` = #{name}
+		</if>
+	</select>
+</mapper>

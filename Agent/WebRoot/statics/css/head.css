@@ -1,0 +1,127 @@
+a {
+	text-decoration: none;
+	color: black;
+}
+
+li {
+	list-style-type: none;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background: wheat;
+	flex-direction: column;
+	display: flex;
+}
+
+body,html {
+	font-size: 10px;
+}
+
+header {
+	border: 1px solid mediumseagreen;
+	background: mediumseagreen;
+	display: flex;
+	flex: 1;
+}
+
+section {
+	background: white;
+	display: flex;
+	flex: 15;
+	width: 100%;
+}
+
+.left {
+	width: 15%;
+}
+
+.right {
+	background-color: rgb(236, 240, 245);
+	width: 85%;
+}
+
+.left dl {
+	margin: 0px;
+}
+
+.left dt {
+	border: 1px solid white;
+	width: 170px;
+	margin-left: 10px;
+	display: inline-block;
+}
+
+.left dt>img:nth-of-type(1) {
+	top: 100px;
+	border-radius: 50%;
+}
+
+.left dt>img,label {
+	vertical-align: middle;
+}
+
+.left dt>label>span>img,a {
+	vertical-align: middle;
+}
+
+.left dl>dd {
+	font-size: 2px;
+	color: grey;
+	margin: 10px 0px 0px 10px;
+}
+.left ul {
+	display: inline;
+}
+
+.left ul>li {
+	border: 1px solid white;
+	font-weight: bolder;
+	padding: 10px;
+	vertical-align: middle;
+}
+
+.left li:nth-of-type(1) {
+	border: 1px solid white;
+	font-weight: bolder;
+}
+
+.left li:nth-of-type(4) {
+	border: 1px solid white;
+	font-weight: bolder;
+}
+
+.left ul>li>span:nth-of-type(1) {
+	margin: 0px 10px 0px 10px;
+}
+
+.left ul>li>span:nth-of-type(2) {
+	float: right;
+}
+
+.headRight {
+	margin-top: 10px;
+}
+
+.headRight>a {
+	color: white;
+}
+
+.headRight>span:nth-of-type(2) {
+	padding: 0px 20px 0px 20px;
+}
+
+.headRight>span:nth-of-type(1) {
+	padding: 0px 20px 0px 20px;
+}
+
+.xiala>input{
+	margin: 0px 9px 0px 10px;
+}
+.xiala>a,input{
+	vertical-align: middle;
+}
+.daili{
+	background: wheat;
+}

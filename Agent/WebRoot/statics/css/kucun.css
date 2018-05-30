@@ -1,0 +1,86 @@
+.tab table {
+	border-color: rgb(244, 244, 244);
+}
+
+.tab td {
+	text-align: center;
+	padding: 5px;
+	vertical-align: bottom;
+}
+
+.i {
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+	border-radius: 8px;
+	background-color: rgb(138, 109, 59);
+	color: white;
+	font-family: "bodoni mt";
+	font-size: 14px;
+	padding: 0;
+}
+
+.section { /*	display: flex;*/
+	border: 1px solid rgb(244, 244, 244);
+	width: 100%;
+	padding: 0 10px;
+	background-color: rgb(236, 240, 245);
+}
+
+.head {
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+	justify-content: space-between;
+	font-size: 12px;
+	color
+}
+
+.header {
+	margin: 10px 0;
+}
+
+.head>h3 {
+	margin: 5px;
+}
+
+head_right a {
+	padding-right: 30px;
+}
+
+head_right a:last-child {
+	color: rgb(177, 179, 181);
+}
+
+.tab table { /*width:100%;*/
+	table-layout: fixed;
+}
+
+.tab td { /*	white-space:nowrap;*/
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.tab { /*	width:100%*/;
+	
+}
+
+#num_key {
+	margin-left: -10%;
+	width: 20%;
+}
+
+#num_value {
+	width: 40%;
+	margin-left: -2%;
+}
+#renwu{
+	width: 100%;
+}
+#renwu tr td{
+	padding-left: 5%;
+	text-align: center;
+}
+#renwu tr{
+	line-height: 210%;
+}

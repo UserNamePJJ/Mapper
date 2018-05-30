@@ -1,0 +1,59 @@
+#sty{
+	background-color: rgb(236,240,245);
+	padding: 10px;
+}
+
+li{
+	list-style-type: none;
+}
+#one{
+	float: left;
+}
+
+#threw{
+	clear: both;
+	
+	
+}
+body,html{
+	font-size:10px;
+}
+#ad{
+	font-size: 2.5em;
+	margin-right:10px;
+}
+#ade{
+	font-size: 1.8em;
+	color: darkgray;
+	margin-top:5px;
+}
+#ada{
+	font-size: 1.2em;
+	margin-top:10px;
+}
+#add{
+	font-size: 1em;
+	margin-top:11px;
+	margin-left: -25px;
+}
+#inp{
+	margin-top: 20px;
+	margin-bottom: 10px;
+	color: white;
+	border: none;
+	background-color: deepskyblue;
+	height: 30px;
+	width: 80px;
+	border-radius: 4px;
+}
+.ae{
+	
+	padding: 6px 3px 6px 3px;
+	border: 1px solid gainsboro;
+	
+	text-align: center;
+	
+}
+#tab{
+	background-color: white;
+}

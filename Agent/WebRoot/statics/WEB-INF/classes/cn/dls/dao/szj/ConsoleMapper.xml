@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.dls.dao.szj.ConsoleMapper">
+
+	<select id="daliCount" resultType="int">
+		SELECT COUNT(1) FROM `user`
+		WHERE `roleid`=2 OR `roleid`=3 OR `roleid`=4
+	</select>
+
+	<select id="billCount" resultType="int">
+		SELECT COUNT(1) FROM `bill`
+		WHERE `state`='已付款'
+	</select>
+	<select id="moneyCount" resultType="int">
+		SELECT COUNT(1) FROM `user`
+		WHERE `monetary`>500
+	</select>
+
+	<select id="maxList" resultType="Commodity">
+		SELECT
+		c.`propertyname`,u.`sales` FROM `utheircomm` u,`commodity` c WHERE
+		u.`commodityid`=c.`commodityid` ORDER BY u.`sales` DESC LIMIT 0,5
+	</select>
+
+	<select id="modCount" resultType="int">
+		SELECT SUM(`sales`) FROM
+		`utheircomm`
+	</select>
+
+	<select id="souCount" resultType="int">
+		SELECT SUM(`transactionprice`)
+		FROM `wallet` WHERE `transactionid`=2
+	</select>
+
+	<select id="souList" resultType="User">
+		SELECT
+		u.`username`,SUM(w.`transactionprice`) as transactionprice
+		FROM `wallet` w,`transactiontype`
+		t,`user` u
+		WHERE w.`transactionid`=t.`id`
+		AND w.`userid`=u.`userid`
+		AND
+		w.`transactionid`=2
+		GROUP BY w.`userid`
+		ORDER BY SUM(w.`transactionprice`) DESC
+		LIMIT 0,5
+	</select>
+	<select id="zhiCount" resultType="int">
+		SELECT SUM(`transactionprice`)
+		FROM `wallet` WHERE `transactionid`=1
+	</select>
+	<select id="zhiList" resultType="User">
+		SELECT
+		u.`username`,SUM(w.`transactionprice`) as transactionprice
+		FROM `wallet` w,`transactiontype`
+		t,`user` u
+		WHERE w.`transactionid`=t.`id`
+		AND w.`userid`=u.`userid`
+		AND
+		w.`transactionid`=1
+		GROUP BY w.`userid`
+		ORDER BY SUM(w.`transactionprice`) DESC
+		LIMIT 0,5
+	</select>
+
+
+	<select id="BilCount" resultType="Bill">
+		SELECT
+		MONTH(b.`transactiontimeend`) as yue,COUNT(1) as billCount
+		FROM `bill`
+		b,`wallet` w
+		WHERE b.`billid`=w.`billid`
+		GROUP BY
+		MONTH(b.`transactiontimeend`)
+		ORDER BY MONTH(b.`transactiontimeend`)
+	</select>
+	<select id="qu2" resultType="Bill">
+		SELECT
+		MONTH(b.`transactiontimeend`) as yue,SUM(w.`transactionprice`) as billCount
+		FROM `bill` b,`wallet` w
+		WHERE b.`billid`=w.`billid` AND w.`transactionid`=2
+		GROUP BY MONTH(b.`transactiontimeend`)
+	</select>
+</mapper>

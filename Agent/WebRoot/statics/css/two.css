@@ -1,0 +1,22 @@
+select{
+	height: 26px;
+	border-radius: 4px;
+	border: 1px solid gainsboro;
+} 
+#gu input{
+	height: 20px;
+}
+
+#hu1 li{
+	margin-left: -40px;
+}
+
+#table{
+    border: 1px solid rgb(236, 240, 245);
+}
+.firstTr{
+	  border: 1px solid #d6dfe6;
+}
+.firstTr td{
+	 border-right: 2px solid rgba(209, 218, 223, 0.4);
+}
