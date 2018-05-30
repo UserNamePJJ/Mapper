@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+    
+    <!--引入 database.properties -->
+    <context:property-placeholder location="classpath:database.properties"/>
+    
+    <!--配置数据源  -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+    <property name="driverClassName" value="${driver}"></property>
+    <property name="url" value="${url}"></property>
+    <property name="username" value="${user}"></property>
+    <property name="password" value="${password}"></property>
+    </bean>
+    
+    <!--配置SqlSessionFactoryBean  -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <property name="dataSource" ref="dataSource"></property>
+    <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+    <!--将映射文件加入到配置文件中  -->
+    <property name="mapperLocations">
+    <list>
+    <value>classpath:org/ssm/dao/**/*.xml</value>
+    </list>
+    </property>
+    </bean>
+    
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+  	  <property name="basePackage" value="org.ssm.dao"></property>
+    </bean>
+    
+    <context:component-scan base-package="org.ssm.serviceImpl"></context:component-scan>
+</beans>
